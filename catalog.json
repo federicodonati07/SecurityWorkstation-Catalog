@@ -1,0 +1,1531 @@
+{
+  "schema_version": 2,
+  "catalog_version": 2,
+  "generated_at": "2026-10-10T00:47:38Z",
+  "name": "Security Workstation Catalog",
+  "categories": [
+    {
+      "id": "developer-utilities",
+      "name": "Developer Utilities",
+      "symbol": "terminal",
+      "color": "#2BFF88"
+    },
+    {
+      "id": "web-application-security",
+      "name": "Web Application Security",
+      "symbol": "globe",
+      "color": "#33D9FA"
+    },
+    {
+      "id": "network-discovery",
+      "name": "Network Discovery",
+      "symbol": "dot.radiowaves.left.and.right",
+      "color": "#9E73FF"
+    },
+    {
+      "id": "network-assessment",
+      "name": "Network Assessment",
+      "symbol": "checklist",
+      "color": "#F273D9"
+    },
+    {
+      "id": "traffic-network-analysis",
+      "name": "Traffic & Network Analysis",
+      "symbol": "waveform.path.ecg",
+      "color": "#FFBD38"
+    },
+    {
+      "id": "wireless-security",
+      "name": "Wireless Security",
+      "symbol": "wifi",
+      "color": "#5AA8FF"
+    },
+    {
+      "id": "credential-auditing",
+      "name": "Credential Auditing",
+      "symbol": "key.horizontal",
+      "color": "#FF5466"
+    },
+    {
+      "id": "exploit-development",
+      "name": "Exploit Development",
+      "symbol": "bolt.shield",
+      "color": "#2BFF88"
+    },
+    {
+      "id": "reverse-engineering",
+      "name": "Reverse Engineering",
+      "symbol": "cpu",
+      "color": "#33D9FA"
+    },
+    {
+      "id": "forensics-malware",
+      "name": "Forensics & Malware Analysis",
+      "symbol": "ladybug",
+      "color": "#FFBD38"
+    },
+    {
+      "id": "mobile-security",
+      "name": "Mobile Security",
+      "symbol": "iphone.gen3",
+      "color": "#2BFF88"
+    },
+    {
+      "id": "osint-secrets",
+      "name": "OSINT & Secrets",
+      "symbol": "eye",
+      "color": "#9E73FF"
+    }
+  ],
+  "presets": [
+    {
+      "id": "essentials",
+      "name": "Essentials",
+      "description": "Everyday command-line tools and runtimes.",
+      "categories": [
+        "developer-utilities"
+      ],
+      "packages": []
+    },
+    {
+      "id": "web-pentest",
+      "name": "Web pentest",
+      "description": "Proxies, scanners and fuzzers for web applications.",
+      "categories": [
+        "web-application-security"
+      ],
+      "packages": [
+        "brew:nmap",
+        "brew:httpx",
+        "cask:mitmproxy"
+      ]
+    },
+    {
+      "id": "network-recon",
+      "name": "Network recon",
+      "description": "Discovery, enumeration and traffic analysis.",
+      "categories": [
+        "network-discovery",
+        "traffic-network-analysis",
+        "network-assessment"
+      ],
+      "packages": []
+    },
+    {
+      "id": "wireless",
+      "name": "Wireless",
+      "description": "Wi-Fi auditing.",
+      "categories": [
+        "wireless-security"
+      ],
+      "packages": []
+    },
+    {
+      "id": "password-auditing",
+      "name": "Password auditing",
+      "description": "Cracking and credential testing.",
+      "categories": [
+        "credential-auditing"
+      ],
+      "packages": []
+    },
+    {
+      "id": "reverse-engineering",
+      "name": "Reverse engineering",
+      "description": "Disassemblers and binary analysis.",
+      "categories": [
+        "reverse-engineering",
+        "exploit-development"
+      ],
+      "packages": []
+    },
+    {
+      "id": "forensics",
+      "name": "Forensics & malware",
+      "description": "Disk, memory and malware analysis.",
+      "categories": [
+        "forensics-malware"
+      ],
+      "packages": []
+    },
+    {
+      "id": "mobile",
+      "name": "Mobile security",
+      "description": "Android/iOS analysis and instrumentation.",
+      "categories": [
+        "mobile-security"
+      ],
+      "packages": []
+    },
+    {
+      "id": "osint",
+      "name": "OSINT & secrets",
+      "description": "Reconnaissance and secret scanning.",
+      "categories": [
+        "osint-secrets"
+      ],
+      "packages": []
+    }
+  ],
+  "packages": [
+    {
+      "id": "brew:age",
+      "number": 1,
+      "symbol": "Ag",
+      "name": "age",
+      "summary": "Simple, modern, secure file encryption",
+      "category": "developer-utilities",
+      "homepage": "https://github.com/FiloSottile/age",
+      "license": "BSD-3-Clause",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "age"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:bat",
+      "number": 2,
+      "symbol": "Ba",
+      "name": "bat",
+      "summary": "Clone of cat(1) with syntax highlighting and Git integration",
+      "category": "developer-utilities",
+      "homepage": "https://github.com/sharkdp/bat",
+      "license": "Apache-2.0 OR MIT",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "bat"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:coreutils",
+      "number": 3,
+      "symbol": "Co",
+      "name": "coreutils",
+      "summary": "GNU File, Shell, and Text utilities",
+      "category": "developer-utilities",
+      "homepage": "https://www.gnu.org/software/coreutils/",
+      "license": "GPL-3.0-or-later",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "coreutils"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:fd",
+      "number": 4,
+      "symbol": "Fd",
+      "name": "fd",
+      "summary": "Simple, fast and user-friendly alternative to find",
+      "category": "developer-utilities",
+      "homepage": "https://github.com/sharkdp/fd",
+      "license": "Apache-2.0 OR MIT",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "fd"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:gh",
+      "number": 5,
+      "symbol": "Gh",
+      "name": "gh",
+      "summary": "GitHub command-line tool",
+      "category": "developer-utilities",
+      "homepage": "https://cli.github.com/",
+      "license": "MIT",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "gh"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:git",
+      "number": 6,
+      "symbol": "Gi",
+      "name": "git",
+      "summary": "Distributed revision control system",
+      "category": "developer-utilities",
+      "homepage": "https://git-scm.com",
+      "license": "",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "git"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:gnupg",
+      "number": 7,
+      "symbol": "Gn",
+      "name": "gnupg",
+      "summary": "GNU Privacy Guard (OpenPGP)",
+      "category": "developer-utilities",
+      "homepage": "https://gnupg.org/",
+      "license": "GPL-3.0-or-later",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "gnupg"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:httpie",
+      "number": 8,
+      "symbol": "Ht",
+      "name": "httpie",
+      "summary": "User-friendly cURL replacement (command-line HTTP client)",
+      "category": "developer-utilities",
+      "homepage": "https://httpie.io/",
+      "license": "BSD-3-Clause",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "httpie"
+      }
+    },
+    {
+      "id": "brew:jq",
+      "number": 9,
+      "symbol": "Jq",
+      "name": "jq",
+      "summary": "Lightweight and flexible command-line JSON processor",
+      "category": "developer-utilities",
+      "homepage": "https://jqlang.github.io/jq/",
+      "license": "MIT",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "jq"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:openssl@3",
+      "number": 10,
+      "symbol": "Op",
+      "name": "openssl@3",
+      "summary": "Cryptography and SSL/TLS Toolkit",
+      "category": "developer-utilities",
+      "homepage": "https://openssl-library.org",
+      "license": "Apache-2.0",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "openssl@3"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:pipx",
+      "number": 11,
+      "symbol": "Pi",
+      "name": "pipx",
+      "summary": "Execute binaries from Python packages in isolated environments",
+      "category": "developer-utilities",
+      "homepage": "https://pipx.pypa.io",
+      "license": "MIT",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "pipx"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:python@3.14",
+      "number": 12,
+      "symbol": "Py",
+      "name": "python@3.14",
+      "summary": "Interpreted, interactive, object-oriented programming language",
+      "category": "developer-utilities",
+      "homepage": "https://www.python.org/",
+      "license": "Python-2.0",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "python@3.14"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:ripgrep",
+      "number": 13,
+      "symbol": "Ri",
+      "name": "ripgrep",
+      "summary": "Search tool like grep and The Silver Searcher",
+      "category": "developer-utilities",
+      "homepage": "https://github.com/BurntSushi/ripgrep",
+      "license": "Unlicense",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "ripgrep"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:tmux",
+      "number": 14,
+      "symbol": "Tm",
+      "name": "tmux",
+      "summary": "Terminal multiplexer",
+      "category": "developer-utilities",
+      "homepage": "https://tmux.github.io/",
+      "license": "ISC",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "tmux"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:tree",
+      "number": 15,
+      "symbol": "Tr",
+      "name": "tree",
+      "summary": "Display directories as trees (with optional color/HTML output)",
+      "category": "developer-utilities",
+      "homepage": "https://oldmanprogrammer.net/source.php?dir=projects/tree",
+      "license": "GPL-2.0-or-later",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "tree"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:wget",
+      "number": 16,
+      "symbol": "Wg",
+      "name": "wget",
+      "summary": "Internet file retriever",
+      "category": "developer-utilities",
+      "homepage": "https://www.gnu.org/software/wget/",
+      "license": "GPL-3.0-or-later",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "wget"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:yq",
+      "number": 17,
+      "symbol": "Yq",
+      "name": "yq",
+      "summary": "Process YAML, JSON, XML, CSV and properties documents from the CLI",
+      "category": "developer-utilities",
+      "homepage": "https://github.com/mikefarah/yq",
+      "license": "MIT",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "yq"
+      },
+      "default": true
+    },
+    {
+      "id": "pipx:arjun",
+      "number": 18,
+      "symbol": "Ar",
+      "name": "arjun",
+      "summary": "HTTP parameter discovery suite",
+      "category": "web-application-security",
+      "homepage": "https://github.com/s0md3v/Arjun",
+      "license": "",
+      "source": {
+        "type": "pipx",
+        "name": "arjun"
+      }
+    },
+    {
+      "id": "cask:burp-suite",
+      "number": 19,
+      "symbol": "Bu",
+      "name": "burp-suite",
+      "summary": "Web security testing toolkit",
+      "category": "web-application-security",
+      "homepage": "https://portswigger.net/burp/",
+      "license": "",
+      "source": {
+        "type": "homebrew_cask",
+        "name": "burp-suite"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:dalfox",
+      "number": 20,
+      "symbol": "Da",
+      "name": "dalfox",
+      "summary": "XSS scanner and utility focused on automation",
+      "category": "web-application-security",
+      "homepage": "https://dalfox.hahwul.com",
+      "license": "MIT",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "dalfox"
+      }
+    },
+    {
+      "id": "brew:feroxbuster",
+      "number": 21,
+      "symbol": "Fe",
+      "name": "feroxbuster",
+      "summary": "Fast, simple, recursive content discovery tool written in Rust",
+      "category": "web-application-security",
+      "homepage": "https://epi052.github.io/feroxbuster",
+      "license": "MIT",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "feroxbuster"
+      }
+    },
+    {
+      "id": "brew:ffuf",
+      "number": 22,
+      "symbol": "Ff",
+      "name": "ffuf",
+      "summary": "Fast web fuzzer written in Go",
+      "category": "web-application-security",
+      "homepage": "https://github.com/ffuf/ffuf",
+      "license": "MIT",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "ffuf"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:gobuster",
+      "number": 23,
+      "symbol": "Go",
+      "name": "gobuster",
+      "summary": "Directory/file & DNS busting tool written in Go",
+      "category": "web-application-security",
+      "homepage": "https://github.com/OJ/gobuster",
+      "license": "Apache-2.0",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "gobuster"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:katana",
+      "number": 24,
+      "symbol": "Ka",
+      "name": "katana",
+      "summary": "Crawling and spidering framework",
+      "category": "web-application-security",
+      "homepage": "https://github.com/projectdiscovery/katana",
+      "license": "MIT",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "katana"
+      }
+    },
+    {
+      "id": "brew:nikto",
+      "number": 25,
+      "symbol": "Ni",
+      "name": "nikto",
+      "summary": "Web server scanner",
+      "category": "web-application-security",
+      "homepage": "https://cirt.net/nikto/",
+      "license": "GPL-3.0-only",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "nikto"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:nuclei",
+      "number": 26,
+      "symbol": "Nu",
+      "name": "nuclei",
+      "summary": "HTTP/DNS scanner configurable via YAML templates",
+      "category": "web-application-security",
+      "homepage": "https://docs.projectdiscovery.io/tools/nuclei/overview",
+      "license": "MIT",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "nuclei"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:sqlmap",
+      "number": 27,
+      "symbol": "Sq",
+      "name": "sqlmap",
+      "summary": "Penetration testing for SQL injection and database servers",
+      "category": "web-application-security",
+      "homepage": "https://sqlmap.org",
+      "license": "GPL-2.0-or-later",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "sqlmap"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:testssl",
+      "number": 28,
+      "symbol": "Te",
+      "name": "testssl",
+      "summary": "Tool which checks for the support of TLS/SSL ciphers and flaws",
+      "category": "web-application-security",
+      "homepage": "https://testssl.sh/",
+      "license": "GPL-2.0-only",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "testssl"
+      }
+    },
+    {
+      "id": "pipx:wafw00f",
+      "number": 29,
+      "symbol": "Wa",
+      "name": "wafw00f",
+      "summary": "The Web Application Firewall Fingerprinting Toolkit",
+      "category": "web-application-security",
+      "homepage": "https://github.com/enablesecurity/wafw00f",
+      "license": "",
+      "source": {
+        "type": "pipx",
+        "name": "wafw00f"
+      },
+      "default": true
+    },
+    {
+      "id": "cask:zap",
+      "number": 30,
+      "symbol": "Za",
+      "name": "zap",
+      "summary": "Free and open source web app scanner",
+      "category": "web-application-security",
+      "homepage": "https://www.zaproxy.org/",
+      "license": "",
+      "source": {
+        "type": "homebrew_cask",
+        "name": "zap"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:amass",
+      "number": 31,
+      "symbol": "Am",
+      "name": "amass",
+      "summary": "In-depth attack surface mapping and asset discovery",
+      "category": "network-discovery",
+      "homepage": "https://owasp.org/www-project-amass/",
+      "license": "Apache-2.0",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "amass"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:arp-scan",
+      "number": 32,
+      "symbol": "Ap",
+      "name": "arp-scan",
+      "summary": "ARP scanning and fingerprinting tool",
+      "category": "network-discovery",
+      "homepage": "https://github.com/royhills/arp-scan",
+      "license": "",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "arp-scan"
+      }
+    },
+    {
+      "id": "brew:dnsx",
+      "number": 33,
+      "symbol": "Dn",
+      "name": "dnsx",
+      "summary": "DNS query and resolution tool",
+      "category": "network-discovery",
+      "homepage": "https://github.com/projectdiscovery/dnsx",
+      "license": "MIT",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "dnsx"
+      }
+    },
+    {
+      "id": "brew:findomain",
+      "number": 34,
+      "symbol": "Fi",
+      "name": "findomain",
+      "summary": "Cross-platform subdomain enumerator",
+      "category": "network-discovery",
+      "homepage": "https://github.com/Findomain/Findomain",
+      "license": "GPL-3.0-or-later",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "findomain"
+      }
+    },
+    {
+      "id": "brew:httpx",
+      "number": 35,
+      "symbol": "Hp",
+      "name": "httpx",
+      "summary": "Fast and multi-purpose HTTP toolkit",
+      "category": "network-discovery",
+      "homepage": "https://github.com/projectdiscovery/httpx",
+      "license": "MIT",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "httpx"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:masscan",
+      "number": 36,
+      "symbol": "Ma",
+      "name": "masscan",
+      "summary": "TCP port scanner, scans entire Internet in under 5 minutes",
+      "category": "network-discovery",
+      "homepage": "https://github.com/robertdavidgraham/masscan/",
+      "license": "AGPL-3.0-only",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "masscan"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:naabu",
+      "number": 37,
+      "symbol": "Na",
+      "name": "naabu",
+      "summary": "Fast port scanner",
+      "category": "network-discovery",
+      "homepage": "https://docs.projectdiscovery.io/tools/naabu/overview",
+      "license": "MIT",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "naabu"
+      }
+    },
+    {
+      "id": "brew:nmap",
+      "number": 38,
+      "symbol": "Nm",
+      "name": "nmap",
+      "summary": "Port scanning utility for large networks",
+      "category": "network-discovery",
+      "homepage": "https://nmap.org/",
+      "license": "LicenseRef-Homebrew-cannot-represent",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "nmap"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:rustscan",
+      "number": 39,
+      "symbol": "Ru",
+      "name": "rustscan",
+      "summary": "Modern Day Portscanner",
+      "category": "network-discovery",
+      "homepage": "https://github.com/bee-san/RustScan",
+      "license": "GPL-3.0-or-later",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "rustscan"
+      }
+    },
+    {
+      "id": "brew:subfinder",
+      "number": 40,
+      "symbol": "Su",
+      "name": "subfinder",
+      "summary": "Subdomain discovery tool",
+      "category": "network-discovery",
+      "homepage": "https://projectdiscovery.io",
+      "license": "MIT",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "subfinder"
+      },
+      "default": true
+    },
+    {
+      "id": "pipx:impacket",
+      "number": 41,
+      "symbol": "Im",
+      "name": "impacket",
+      "summary": "Network protocols Constructors and Dissectors",
+      "category": "network-assessment",
+      "homepage": "https://www.coresecurity.com",
+      "license": "",
+      "source": {
+        "type": "pipx",
+        "name": "impacket"
+      }
+    },
+    {
+      "id": "pipx:netexec",
+      "number": 42,
+      "symbol": "Ne",
+      "name": "netexec",
+      "summary": "Network service exploitation tool (successor of CrackMapExec)",
+      "category": "network-assessment",
+      "homepage": "https://github.com/Pennyw0rth/NetExec",
+      "license": "",
+      "source": {
+        "type": "pipx",
+        "name": "netexec",
+        "spec": "git+https://github.com/Pennyw0rth/NetExec"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:bettercap",
+      "number": 43,
+      "symbol": "Be",
+      "name": "bettercap",
+      "summary": "Swiss army knife for network attacks and monitoring",
+      "category": "traffic-network-analysis",
+      "homepage": "https://www.bettercap.org/",
+      "license": "GPL-3.0-only",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "bettercap"
+      },
+      "default": true
+    },
+    {
+      "id": "cask:mitmproxy",
+      "number": 44,
+      "symbol": "Mi",
+      "name": "mitmproxy",
+      "summary": "Intercept, modify, replay, save HTTP/S traffic",
+      "category": "traffic-network-analysis",
+      "homepage": "https://mitmproxy.org/",
+      "license": "",
+      "source": {
+        "type": "homebrew_cask",
+        "name": "mitmproxy"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:netcat",
+      "number": 45,
+      "symbol": "Nt",
+      "name": "netcat",
+      "summary": "Utility for managing network connections",
+      "category": "traffic-network-analysis",
+      "homepage": "https://netcat.sourceforge.net/",
+      "license": "GPL-2.0-or-later",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "netcat"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:ngrep",
+      "number": 46,
+      "symbol": "Ng",
+      "name": "ngrep",
+      "summary": "Network grep",
+      "category": "traffic-network-analysis",
+      "homepage": "https://github.com/jpr5/ngrep",
+      "license": "ngrep",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "ngrep"
+      }
+    },
+    {
+      "id": "brew:proxychains-ng",
+      "number": 47,
+      "symbol": "Pr",
+      "name": "proxychains-ng",
+      "summary": "Hook preloader",
+      "category": "traffic-network-analysis",
+      "homepage": "https://github.com/rofl0r/proxychains-ng",
+      "license": "GPL-2.0-or-later",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "proxychains-ng"
+      }
+    },
+    {
+      "id": "brew:socat",
+      "number": 48,
+      "symbol": "So",
+      "name": "socat",
+      "summary": "SOcket CAT: netcat on steroids",
+      "category": "traffic-network-analysis",
+      "homepage": "https://www.dest-unreach.org/socat/",
+      "license": "GPL-2.0-only",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "socat"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:sslscan",
+      "number": 49,
+      "symbol": "Ss",
+      "name": "sslscan",
+      "summary": "Test SSL/TLS enabled services to discover supported cipher suites",
+      "category": "traffic-network-analysis",
+      "homepage": "https://github.com/rbsec/sslscan",
+      "license": "",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "sslscan"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:tcpdump",
+      "number": 50,
+      "symbol": "Tc",
+      "name": "tcpdump",
+      "summary": "Command-line packet analyzer",
+      "category": "traffic-network-analysis",
+      "homepage": "https://www.tcpdump.org/",
+      "license": "BSD-3-Clause",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "tcpdump"
+      }
+    },
+    {
+      "id": "brew:tor",
+      "number": 51,
+      "symbol": "To",
+      "name": "tor",
+      "summary": "Anonymizing overlay network for TCP",
+      "category": "traffic-network-analysis",
+      "homepage": "https://www.torproject.org/",
+      "license": "",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "tor"
+      }
+    },
+    {
+      "id": "brew:wireshark",
+      "number": 52,
+      "symbol": "Wi",
+      "name": "wireshark",
+      "summary": "Network analyzer and capture tool - without graphical user interface",
+      "category": "traffic-network-analysis",
+      "homepage": "https://www.wireshark.org",
+      "license": "GPL-2.0-or-later",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "wireshark"
+      }
+    },
+    {
+      "id": "cask:wireshark-app",
+      "number": 53,
+      "symbol": "Wr",
+      "name": "wireshark-app",
+      "summary": "Network protocol analyzer",
+      "category": "traffic-network-analysis",
+      "homepage": "https://www.wireshark.org/",
+      "license": "",
+      "source": {
+        "type": "homebrew_cask",
+        "name": "wireshark-app"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:aircrack-ng",
+      "number": 54,
+      "symbol": "Ai",
+      "name": "aircrack-ng",
+      "summary": "Next-generation aircrack with lots of new features",
+      "category": "wireless-security",
+      "homepage": "https://aircrack-ng.org/",
+      "license": "",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "aircrack-ng"
+      }
+    },
+    {
+      "id": "brew:crunch",
+      "number": 55,
+      "symbol": "Cr",
+      "name": "crunch",
+      "summary": "Wordlist generator",
+      "category": "credential-auditing",
+      "homepage": "https://sourceforge.net/projects/crunch-wordlist/",
+      "license": "GPL-2.0-only",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "crunch"
+      }
+    },
+    {
+      "id": "brew:fcrackzip",
+      "number": 56,
+      "symbol": "Fc",
+      "name": "fcrackzip",
+      "summary": "Zip password cracker",
+      "category": "credential-auditing",
+      "homepage": "https://oldhome.schmorp.de/marc/fcrackzip.html",
+      "license": "GPL-2.0-or-later",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "fcrackzip"
+      }
+    },
+    {
+      "id": "brew:hashcat",
+      "number": 57,
+      "symbol": "Ha",
+      "name": "hashcat",
+      "summary": "World's fastest and most advanced password recovery utility",
+      "category": "credential-auditing",
+      "homepage": "https://hashcat.net/hashcat/",
+      "license": "",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "hashcat"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:hydra",
+      "number": 58,
+      "symbol": "Hy",
+      "name": "hydra",
+      "summary": "Network logon cracker which supports many services",
+      "category": "credential-auditing",
+      "homepage": "https://github.com/vanhauser-thc/thc-hydra",
+      "license": "AGPL-3.0-only",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "hydra"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:john-jumbo",
+      "number": 59,
+      "symbol": "Jo",
+      "name": "john-jumbo",
+      "summary": "Enhanced version of john, a UNIX password cracker",
+      "category": "credential-auditing",
+      "homepage": "https://www.openwall.com/john/",
+      "license": "GPL-2.0-or-later",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "john-jumbo"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:medusa",
+      "number": 60,
+      "symbol": "Me",
+      "name": "medusa",
+      "summary": "Solidity smart contract fuzzer powered by go-ethereum",
+      "category": "credential-auditing",
+      "homepage": "https://secure-contracts.com/program-analysis/medusa/docs/src/",
+      "license": "AGPL-3.0-only",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "medusa"
+      }
+    },
+    {
+      "id": "brew:ncrack",
+      "number": 61,
+      "symbol": "Nc",
+      "name": "ncrack",
+      "summary": "Network authentication cracking tool",
+      "category": "credential-auditing",
+      "homepage": "https://nmap.org/ncrack/",
+      "license": "LicenseRef-Homebrew-cannot-represent",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "ncrack"
+      }
+    },
+    {
+      "id": "brew:exploitdb",
+      "number": 62,
+      "symbol": "Ex",
+      "name": "exploitdb",
+      "summary": "Database of public exploits and corresponding vulnerable software",
+      "category": "exploit-development",
+      "homepage": "https://www.exploit-db.com/",
+      "license": "GPL-2.0-or-later",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "exploitdb"
+      },
+      "default": true
+    },
+    {
+      "id": "cask:metasploit",
+      "number": 63,
+      "symbol": "Mt",
+      "name": "metasploit",
+      "summary": "Penetration testing framework",
+      "category": "exploit-development",
+      "homepage": "https://www.metasploit.com/",
+      "license": "",
+      "source": {
+        "type": "homebrew_cask",
+        "name": "metasploit"
+      }
+    },
+    {
+      "id": "brew:pwntools",
+      "number": 64,
+      "symbol": "Pw",
+      "name": "pwntools",
+      "summary": "CTF framework used by Gallopsled in every CTF",
+      "category": "exploit-development",
+      "homepage": "https://github.com/Gallopsled/pwntools",
+      "license": "MIT",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "pwntools"
+      },
+      "default": true
+    },
+    {
+      "id": "cask:cutter",
+      "number": 65,
+      "symbol": "Cu",
+      "name": "cutter",
+      "summary": "Reverse engineering platform powered by Rizin",
+      "category": "reverse-engineering",
+      "homepage": "https://cutter.re/",
+      "license": "",
+      "source": {
+        "type": "homebrew_cask",
+        "name": "cutter"
+      }
+    },
+    {
+      "id": "brew:ghidra",
+      "number": 66,
+      "symbol": "Gd",
+      "name": "ghidra",
+      "summary": "Multi-platform software reverse engineering framework",
+      "category": "reverse-engineering",
+      "homepage": "https://github.com/NationalSecurityAgency/ghidra",
+      "license": "Apache-2.0",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "ghidra"
+      },
+      "default": true
+    },
+    {
+      "id": "cask:hopper-disassembler",
+      "number": 67,
+      "symbol": "Ho",
+      "name": "hopper-disassembler",
+      "summary": "Reverse engineering tool that lets you disassemble, decompile and debug your app",
+      "category": "reverse-engineering",
+      "homepage": "https://www.hopperapp.com/",
+      "license": "",
+      "source": {
+        "type": "homebrew_cask",
+        "name": "hopper-disassembler"
+      }
+    },
+    {
+      "id": "brew:radare2",
+      "number": 68,
+      "symbol": "Ra",
+      "name": "radare2",
+      "summary": "Reverse engineering framework",
+      "category": "reverse-engineering",
+      "homepage": "https://radare.org",
+      "license": "LGPL-3.0-only",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "radare2"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:rizin",
+      "number": 69,
+      "symbol": "Rz",
+      "name": "rizin",
+      "summary": "UNIX-like reverse engineering framework and command-line toolset",
+      "category": "reverse-engineering",
+      "homepage": "https://rizin.re",
+      "license": "LGPL-3.0-only",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "rizin"
+      }
+    },
+    {
+      "id": "brew:binwalk",
+      "number": 70,
+      "symbol": "Bi",
+      "name": "binwalk",
+      "summary": "Searches a binary image for embedded files and executable code",
+      "category": "forensics-malware",
+      "homepage": "https://github.com/ReFirmLabs/binwalk",
+      "license": "MIT",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "binwalk"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:exiftool",
+      "number": 71,
+      "symbol": "Ei",
+      "name": "exiftool",
+      "summary": "Perl lib for reading and writing EXIF metadata",
+      "category": "forensics-malware",
+      "homepage": "https://exiftool.org",
+      "license": "Artistic-1.0-Perl OR GPL-1.0-or-later",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "exiftool"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:foremost",
+      "number": 72,
+      "symbol": "Fo",
+      "name": "foremost",
+      "summary": "Console program to recover files based on their headers and footers",
+      "category": "forensics-malware",
+      "homepage": "https://foremost.sourceforge.net/",
+      "license": "LicenseRef-Homebrew-public-domain",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "foremost"
+      }
+    },
+    {
+      "id": "brew:sleuthkit",
+      "number": 73,
+      "symbol": "Sl",
+      "name": "sleuthkit",
+      "summary": "Forensic toolkit",
+      "category": "forensics-malware",
+      "homepage": "https://www.sleuthkit.org/",
+      "license": "",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "sleuthkit"
+      }
+    },
+    {
+      "id": "brew:testdisk",
+      "number": 74,
+      "symbol": "Ts",
+      "name": "testdisk",
+      "summary": "Powerful free data recovery utility",
+      "category": "forensics-malware",
+      "homepage": "https://www.cgsecurity.org/wiki/TestDisk",
+      "license": "GPL-2.0-or-later",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "testdisk"
+      }
+    },
+    {
+      "id": "pipx:volatility3",
+      "number": 75,
+      "symbol": "Vo",
+      "name": "volatility3",
+      "summary": "Memory forensics framework",
+      "category": "forensics-malware",
+      "homepage": "https://pypi.org/project/volatility3/",
+      "license": "",
+      "source": {
+        "type": "pipx",
+        "name": "volatility3"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:yara",
+      "number": 76,
+      "symbol": "Ya",
+      "name": "yara",
+      "summary": "Malware identification and classification tool",
+      "category": "forensics-malware",
+      "homepage": "https://virustotal.github.io/yara/",
+      "license": "BSD-3-Clause",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "yara"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:yara-x",
+      "number": 77,
+      "symbol": "Yr",
+      "name": "yara-x",
+      "summary": "Tool to do pattern matching for malware research",
+      "category": "forensics-malware",
+      "homepage": "https://virustotal.github.io/yara-x/",
+      "license": "BSD-3-Clause",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "yara-x"
+      }
+    },
+    {
+      "id": "cask:android-platform-tools",
+      "number": 78,
+      "symbol": "An",
+      "name": "android-platform-tools",
+      "summary": "Android SDK component",
+      "category": "mobile-security",
+      "homepage": "https://developer.android.com/tools/releases/platform-tools",
+      "license": "",
+      "source": {
+        "type": "homebrew_cask",
+        "name": "android-platform-tools"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:apkleaks",
+      "number": 79,
+      "symbol": "Ak",
+      "name": "apkleaks",
+      "summary": "Scanning APK file for URIs, endpoints & secrets",
+      "category": "mobile-security",
+      "homepage": "https://github.com/dwisiswant0/apkleaks",
+      "license": "Apache-2.0",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "apkleaks"
+      }
+    },
+    {
+      "id": "brew:apktool",
+      "number": 80,
+      "symbol": "At",
+      "name": "apktool",
+      "summary": "Tool for reverse engineering 3rd party, closed, binary Android apps",
+      "category": "mobile-security",
+      "homepage": "https://apktool.org",
+      "license": "Apache-2.0",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "apktool"
+      },
+      "default": true
+    },
+    {
+      "id": "pipx:frida-tools",
+      "number": 81,
+      "symbol": "Fr",
+      "name": "frida-tools",
+      "summary": "Frida CLI tools",
+      "category": "mobile-security",
+      "homepage": "https://frida.re",
+      "license": "",
+      "source": {
+        "type": "pipx",
+        "name": "frida-tools"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:jadx",
+      "number": 82,
+      "symbol": "Ja",
+      "name": "jadx",
+      "summary": "Dex to Java decompiler",
+      "category": "mobile-security",
+      "homepage": "https://github.com/skylot/jadx",
+      "license": "Apache-2.0",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "jadx"
+      },
+      "default": true
+    },
+    {
+      "id": "pipx:objection",
+      "number": 83,
+      "symbol": "Ob",
+      "name": "objection",
+      "summary": "Instrumented Mobile Pentest Framework",
+      "category": "mobile-security",
+      "homepage": "https://github.com/sensepost/objection",
+      "license": "",
+      "source": {
+        "type": "pipx",
+        "name": "objection"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:detect-secrets",
+      "number": 84,
+      "symbol": "De",
+      "name": "detect-secrets",
+      "summary": "Enterprise friendly way of detecting and preventing secrets in code",
+      "category": "osint-secrets",
+      "homepage": "https://github.com/Yelp/detect-secrets",
+      "license": "Apache-2.0",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "detect-secrets"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:gitleaks",
+      "number": 85,
+      "symbol": "Gt",
+      "name": "gitleaks",
+      "summary": "Audit git repos for secrets",
+      "category": "osint-secrets",
+      "homepage": "https://gitleaks.io/",
+      "license": "MIT",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "gitleaks"
+      },
+      "default": true
+    },
+    {
+      "id": "pipx:maigret",
+      "number": 86,
+      "symbol": "Mg",
+      "name": "maigret",
+      "summary": "🕵️‍♂️ Collect a dossier on a person by username from thousands of sites.",
+      "category": "osint-secrets",
+      "homepage": "https://pypi.org/project/maigret",
+      "license": "",
+      "source": {
+        "type": "pipx",
+        "name": "maigret"
+      }
+    },
+    {
+      "id": "cask:maltego",
+      "number": 87,
+      "symbol": "Ml",
+      "name": "maltego",
+      "summary": "Open source intelligence and graphical link analysis tool",
+      "category": "osint-secrets",
+      "homepage": "https://www.maltego.com/pricing-plans/",
+      "license": "",
+      "source": {
+        "type": "homebrew_cask",
+        "name": "maltego"
+      }
+    },
+    {
+      "id": "brew:recon-ng",
+      "number": 88,
+      "symbol": "Re",
+      "name": "recon-ng",
+      "summary": "Web Reconnaissance Framework",
+      "category": "osint-secrets",
+      "homepage": "https://github.com/lanmaster53/recon-ng",
+      "license": "GPL-3.0-only",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "recon-ng"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:semgrep",
+      "number": 89,
+      "symbol": "Se",
+      "name": "semgrep",
+      "summary": "Easily detect and prevent bugs and anti-patterns in your codebase",
+      "category": "osint-secrets",
+      "homepage": "https://semgrep.dev",
+      "license": "LGPL-2.1-only",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "semgrep"
+      }
+    },
+    {
+      "id": "brew:sherlock",
+      "number": 90,
+      "symbol": "Sh",
+      "name": "sherlock",
+      "summary": "Hunt down social media accounts by username",
+      "category": "osint-secrets",
+      "homepage": "https://sherlockproject.xyz/",
+      "license": "MIT",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "sherlock"
+      }
+    },
+    {
+      "id": "brew:theharvester",
+      "number": 91,
+      "symbol": "Th",
+      "name": "theharvester",
+      "summary": "Gather materials from public sources (for pen testers)",
+      "category": "osint-secrets",
+      "homepage": "https://www.edge-security.com",
+      "license": "GPL-2.0-only",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "theharvester"
+      },
+      "default": true
+    },
+    {
+      "id": "brew:trivy",
+      "number": 92,
+      "symbol": "Ti",
+      "name": "trivy",
+      "summary": "Vulnerability scanner for container images, file systems, and Git repos",
+      "category": "osint-secrets",
+      "homepage": "https://trivy.dev/",
+      "license": "Apache-2.0",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "trivy"
+      }
+    },
+    {
+      "id": "brew:trufflehog",
+      "number": 93,
+      "symbol": "Tu",
+      "name": "trufflehog",
+      "summary": "Find and verify credentials",
+      "category": "osint-secrets",
+      "homepage": "https://trufflesecurity.com/",
+      "license": "AGPL-3.0-only",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "trufflehog"
+      }
+    }
+  ]
+}

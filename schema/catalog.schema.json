@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Security Workstation catalog (schema_version 2)",
+  "type": "object",
+  "required": ["schema_version", "catalog_version", "categories", "packages"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": 2 },
+    "catalog_version": { "type": "integer", "minimum": 1, "description": "Monotonic. Apps refuse a catalog older than the one they already trust." },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "name": { "type": "string" },
+    "categories": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "required": ["id", "name", "symbol", "color"], "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "name": { "type": "string" },
+          "symbol": { "type": "string", "description": "SF Symbol name" },
+          "color": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" }
+        }
+      }
+    },
+    "presets": {
+      "type": "array",
+      "items": {
+        "type": "object", "required": ["id", "name"], "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" }, "name": { "type": "string" }, "description": { "type": "string" },
+          "categories": { "type": "array", "items": { "type": "string" } },
+          "packages": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "packages": {
+      "type": "array",
+      "items": {
+        "type": "object", "required": ["id", "name", "summary", "category", "source"], "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^(brew|cask|pipx):[A-Za-z0-9][A-Za-z0-9._+@-]*$" },
+          "number": { "type": "integer", "minimum": 1, "description": "Periodic-table number. Assigned once by tools/release.py, never reused." },
+          "symbol": { "type": "string", "pattern": "^[A-Z][a-z0-9]{1,2}$", "description": "Periodic-table symbol, unique." },
+          "name": { "type": "string" },
+          "summary": { "type": "string", "minLength": 1, "maxLength": 300 },
+          "category": { "type": "string" },
+          "homepage": { "type": "string", "pattern": "^(https://.*)?$" },
+          "license": { "type": "string" },
+          "default": { "type": "boolean", "description": "Preselected on first run." },
+          "tags": { "type": "array", "items": { "type": "string" } },
+          "note": { "type": "string" },
+          "source": {
+            "type": "object", "required": ["type", "name"], "additionalProperties": false,
+            "properties": {
+              "type": { "enum": ["homebrew_formula", "homebrew_cask", "pipx"] },
+              "name": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._+@-]*$" },
+              "spec": { "type": "string", "pattern": "^git\\+https://github\\.com/[A-Za-z0-9._-]+/[A-Za-z0-9._-]+(@[A-Za-z0-9._/-]+)?$", "description": "pipx only: install from a GitHub repository instead of PyPI." }
+            }
+          }
+        }
+      }
+    }
+  }
+}
