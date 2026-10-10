@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "catalog_version": 4,
-  "generated_at": "2026-10-10T01:19:07Z",
+  "catalog_version": 5,
+  "generated_at": "2026-10-10T01:53:35Z",
   "name": "Security Workstation Catalog",
   "categories": [
     {
@@ -1006,32 +1006,23 @@
         "wpaclean",
         "buddy-ng",
         "besside-ng-crawler",
+        "airodump-ng",
+        "aireplay-ng",
+        "airbase-ng",
+        "besside-ng",
+        "airserv-ng",
+        "airtun-ng",
+        "airventriloquist-ng",
+        "easside-ng",
+        "tkiptun-ng",
+        "wesside-ng",
         {
           "name": "airmon-ng",
           "builtin": "airmon-ng",
           "note": "macOS has no airmon-ng. This helper lists your Wi-Fi interfaces and shows the macOS way to capture in monitor mode (tcpdump -I)."
-        },
-        {
-          "name": "airodump-ng",
-          "builtin": "unavailable",
-          "note": "Needs Linux monitor-mode drivers. On macOS: sudo tcpdump -I -i en0 -w capture.pcap, then open it in Wireshark or aircrack-ng."
-        },
-        {
-          "name": "aireplay-ng",
-          "builtin": "unavailable",
-          "note": "Packet injection needs Linux drivers. Use a Linux VM or machine with a supported USB Wi-Fi adapter."
-        },
-        {
-          "name": "airbase-ng",
-          "builtin": "unavailable",
-          "note": "Needs Linux drivers (soft AP / injection). Use a Linux VM with a supported USB Wi-Fi adapter."
-        },
-        {
-          "name": "besside-ng",
-          "builtin": "unavailable",
-          "note": "Needs Linux injection drivers. Use a Linux VM with a supported USB Wi-Fi adapter."
         }
-      ]
+      ],
+      "note": "Needs sudo for capture/injection. On macOS, monitor mode and packet injection depend on the Wi-Fi hardware/driver; airodump-ng and aireplay-ng are installed but injection usually needs a Linux machine with a supported USB adapter."
     },
     {
       "id": "brew:crunch",
