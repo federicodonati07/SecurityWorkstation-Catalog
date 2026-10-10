@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "catalog_version": 3,
-  "generated_at": "2026-10-10T00:55:45Z",
+  "catalog_version": 4,
+  "generated_at": "2026-10-10T01:19:07Z",
   "name": "Security Workstation Catalog",
   "categories": [
     {
@@ -449,7 +449,13 @@
         "type": "homebrew_cask",
         "name": "burp-suite"
       },
-      "default": true
+      "default": true,
+      "commands": [
+        {
+          "name": "burpsuite",
+          "app": "Burp Suite"
+        }
+      ]
     },
     {
       "id": "brew:dalfox",
@@ -610,7 +616,13 @@
         "type": "homebrew_cask",
         "name": "zap"
       },
-      "default": true
+      "default": true,
+      "commands": [
+        {
+          "name": "zaproxy",
+          "app": "ZAP"
+        }
+      ]
     },
     {
       "id": "brew:amass",
@@ -785,7 +797,12 @@
         "name": "netexec",
         "spec": "git+https://github.com/Pennyw0rth/NetExec"
       },
-      "default": true
+      "default": true,
+      "commands": [
+        "netexec",
+        "nxc",
+        "nxcdb"
+      ]
     },
     {
       "id": "brew:bettercap",
@@ -830,7 +847,11 @@
         "type": "homebrew_formula",
         "name": "netcat"
       },
-      "default": true
+      "default": true,
+      "commands": [
+        "nc",
+        "netcat"
+      ]
     },
     {
       "id": "brew:ngrep",
@@ -858,7 +879,14 @@
       "source": {
         "type": "homebrew_formula",
         "name": "proxychains-ng"
-      }
+      },
+      "commands": [
+        "proxychains4",
+        {
+          "name": "proxychains",
+          "runs": "proxychains4"
+        }
+      ]
     },
     {
       "id": "brew:socat",
@@ -945,7 +973,13 @@
         "type": "homebrew_cask",
         "name": "wireshark-app"
       },
-      "default": true
+      "default": true,
+      "commands": [
+        {
+          "name": "wireshark",
+          "app": "Wireshark"
+        }
+      ]
     },
     {
       "id": "brew:aircrack-ng",
@@ -959,7 +993,45 @@
       "source": {
         "type": "homebrew_formula",
         "name": "aircrack-ng"
-      }
+      },
+      "commands": [
+        "aircrack-ng",
+        "airdecap-ng",
+        "airdecloak-ng",
+        "airolib-ng",
+        "packetforge-ng",
+        "makeivs-ng",
+        "ivstools",
+        "kstats",
+        "wpaclean",
+        "buddy-ng",
+        "besside-ng-crawler",
+        {
+          "name": "airmon-ng",
+          "builtin": "airmon-ng",
+          "note": "macOS has no airmon-ng. This helper lists your Wi-Fi interfaces and shows the macOS way to capture in monitor mode (tcpdump -I)."
+        },
+        {
+          "name": "airodump-ng",
+          "builtin": "unavailable",
+          "note": "Needs Linux monitor-mode drivers. On macOS: sudo tcpdump -I -i en0 -w capture.pcap, then open it in Wireshark or aircrack-ng."
+        },
+        {
+          "name": "aireplay-ng",
+          "builtin": "unavailable",
+          "note": "Packet injection needs Linux drivers. Use a Linux VM or machine with a supported USB Wi-Fi adapter."
+        },
+        {
+          "name": "airbase-ng",
+          "builtin": "unavailable",
+          "note": "Needs Linux drivers (soft AP / injection). Use a Linux VM with a supported USB Wi-Fi adapter."
+        },
+        {
+          "name": "besside-ng",
+          "builtin": "unavailable",
+          "note": "Needs Linux injection drivers. Use a Linux VM with a supported USB Wi-Fi adapter."
+        }
+      ]
     },
     {
       "id": "brew:crunch",
@@ -1032,7 +1104,10 @@
         "type": "homebrew_formula",
         "name": "john-jumbo"
       },
-      "default": true
+      "default": true,
+      "commands": [
+        "john"
+      ]
     },
     {
       "id": "brew:medusa",
@@ -1089,7 +1164,13 @@
       "source": {
         "type": "homebrew_cask",
         "name": "metasploit"
-      }
+      },
+      "commands": [
+        "msfconsole",
+        "msfvenom",
+        "msfdb"
+      ],
+      "note": "Intel build (x86_64) installed with a system package; runs through Rosetta on Apple Silicon. Asks for the administrator password."
     },
     {
       "id": "brew:pwntools",
@@ -1118,7 +1199,13 @@
       "source": {
         "type": "homebrew_cask",
         "name": "cutter"
-      }
+      },
+      "commands": [
+        {
+          "name": "cutter",
+          "app": "Cutter"
+        }
+      ]
     },
     {
       "id": "brew:ghidra",
@@ -1133,7 +1220,14 @@
         "type": "homebrew_formula",
         "name": "ghidra"
       },
-      "default": true
+      "default": true,
+      "commands": [
+        "ghidraRun",
+        {
+          "name": "ghidra",
+          "runs": "ghidraRun"
+        }
+      ]
     },
     {
       "id": "cask:hopper-disassembler",
@@ -1147,7 +1241,13 @@
       "source": {
         "type": "homebrew_cask",
         "name": "hopper-disassembler"
-      }
+      },
+      "commands": [
+        {
+          "name": "hopper",
+          "app": "Hopper Disassembler v4"
+        }
+      ]
     },
     {
       "id": "brew:radare2",
@@ -1263,7 +1363,15 @@
         "type": "pipx",
         "name": "volatility3"
       },
-      "default": true
+      "default": true,
+      "commands": [
+        "vol",
+        "volshell",
+        {
+          "name": "volatility3",
+          "runs": "vol"
+        }
+      ]
     },
     {
       "id": "brew:yara",
@@ -1439,7 +1547,13 @@
       "source": {
         "type": "homebrew_cask",
         "name": "maltego"
-      }
+      },
+      "commands": [
+        {
+          "name": "maltego",
+          "app": "Maltego"
+        }
+      ]
     },
     {
       "id": "brew:recon-ng",
@@ -1497,7 +1611,14 @@
         "type": "homebrew_formula",
         "name": "theharvester"
       },
-      "default": true
+      "default": true,
+      "commands": [
+        "theharvester",
+        {
+          "name": "theHarvester",
+          "runs": "theharvester"
+        }
+      ]
     },
     {
       "id": "brew:trivy",

@@ -12,7 +12,33 @@ SYMBOL = re.compile(r"^[A-Z][a-z0-9]{1,2}$")
 SPEC = re.compile(r"^git\+https://github\.com/[A-Za-z0-9._-]+/[A-Za-z0-9._-]+(@[A-Za-z0-9._/-]+)?$")
 HEX = re.compile(r"^#[0-9A-Fa-f]{6}$")
 TYPES = {"homebrew_formula": "brew", "homebrew_cask": "cask", "pipx": "pipx"}
-PKG_KEYS = {"id", "number", "symbol", "name", "summary", "category", "homepage", "license", "source", "default", "tags", "note"}
+PKG_KEYS = {"id", "number", "symbol", "name", "summary", "category", "homepage", "license", "source", "default", "tags", "note", "commands"}
+CMD = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._+-]{0,63}$")
+APP = re.compile(r"^[A-Za-z0-9][A-Za-z0-9 ._+-]{0,63}$")
+BUILTINS = {"airmon-ng", "unavailable"}   # helpers shipped inside the app; the catalog can never carry script content
+
+
+def validate_commands(pid, cmds, err):
+    """`commands` = the Kali-style command names a package should provide. A plain string is a native command
+    (must exist after install). An object may say how to provide it: runs (another command), app (a .app), or builtin."""
+    if not isinstance(cmds, list): err(f"{pid}: commands must be a list"); return
+    seen = set()
+    for c in cmds:
+        if isinstance(c, str): c = {"name": c}
+        if not isinstance(c, dict): err(f"{pid}: command entries must be strings or objects"); continue
+        for k in set(c) - {"name", "runs", "app", "builtin", "note"}: err(f"{pid}: command has unknown key {k!r}")
+        n = c.get("name", "")
+        if not CMD.match(n): err(f"{pid}: invalid command name {n!r}"); continue
+        if n in seen: err(f"{pid}: duplicate command {n}")
+        seen.add(n)
+        how = [k for k in ("runs", "app", "builtin") if k in c]
+        if len(how) > 1: err(f"{pid}: command {n} may use only one of runs/app/builtin")
+        if "runs" in c and not CMD.match(str(c["runs"])): err(f"{pid}: command {n}: invalid runs target")
+        if "app" in c and not APP.match(str(c["app"])): err(f"{pid}: command {n}: invalid app name")
+        if "builtin" in c and c["builtin"] not in BUILTINS: err(f"{pid}: command {n}: unknown builtin")
+        note = c.get("note", "")
+        if not isinstance(note, str) or len(note) > 240 or "\n" in note: err(f"{pid}: command {n}: note must be one line, max 240 chars")
+
 TOP_KEYS = {"schema_version", "catalog_version", "generated_at", "name", "categories", "presets", "packages"}
 
 
@@ -70,6 +96,7 @@ def validate(doc):
         hp = p.get("homepage", "")
         if hp and not hp.startswith("https://"): err(f"{pid}: homepage must be https")
         if "default" in p and not isinstance(p["default"], bool): err(f"{pid}: default must be boolean")
+        if "commands" in p: validate_commands(pid, p["commands"], err)
 
     for pr in doc.get("presets") or []:
         if set(pr) - {"id", "name", "description", "categories", "packages"}: err(f"preset {pr.get('id')}: unknown keys")
