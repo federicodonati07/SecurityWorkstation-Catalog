@@ -3,3 +3,5 @@
 *.pem.private
 *.p12
 .env
+__pycache__/
+*.pyc
