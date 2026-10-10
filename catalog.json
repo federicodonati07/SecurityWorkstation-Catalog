@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "catalog_version": 2,
-  "generated_at": "2026-10-10T00:47:38Z",
+  "catalog_version": 3,
+  "generated_at": "2026-10-10T00:55:45Z",
   "name": "Security Workstation Catalog",
   "categories": [
     {
@@ -1526,6 +1526,48 @@
         "type": "homebrew_formula",
         "name": "trufflehog"
       }
+    },
+    {
+      "id": "brew:zmap",
+      "name": "zmap",
+      "summary": "Network scanner for Internet-wide network studies",
+      "category": "network-discovery",
+      "homepage": "https://zmap.io",
+      "license": "Apache-2.0",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "zmap"
+      },
+      "number": 94,
+      "symbol": "Zm"
+    },
+    {
+      "id": "brew:ettercap",
+      "name": "ettercap",
+      "summary": "Multipurpose sniffer/interceptor/logger for switched LAN",
+      "category": "traffic-network-analysis",
+      "homepage": "https://ettercap.github.io/ettercap/",
+      "license": "GPL-2.0-or-later",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "ettercap"
+      },
+      "number": 95,
+      "symbol": "Et"
+    },
+    {
+      "id": "brew:ssh-audit",
+      "name": "ssh-audit",
+      "summary": "SSH server & client auditing",
+      "category": "network-assessment",
+      "homepage": "https://github.com/jtesta/ssh-audit",
+      "license": "MIT",
+      "source": {
+        "type": "homebrew_formula",
+        "name": "ssh-audit"
+      },
+      "number": 96,
+      "symbol": "Sa"
     }
   ]
 }

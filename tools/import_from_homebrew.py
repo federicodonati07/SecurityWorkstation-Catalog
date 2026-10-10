@@ -14,8 +14,10 @@ import json, subprocess, sys, urllib.request
 
 def brew_info(kind, names):
     flag = "--formula" if kind == "formula" else "--cask"
-    out = subprocess.run(["brew", "info", "--json=v2", flag, *names], capture_output=True, text=True, check=True).stdout
-    data = json.loads(out)
+    r = subprocess.run(["brew", "info", "--json=v2", flag, *names], capture_output=True, text=True)
+    if r.returncode != 0:
+        sys.exit("Homebrew does not know one of these names (check the spelling):\n" + r.stderr.strip())
+    data = json.loads(r.stdout)
     return data["formulae"] if kind == "formula" else data["casks"]
 
 
